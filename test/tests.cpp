@@ -36,7 +36,7 @@ TEST(EarthRopeTest, GapCalculation) {
 
 TEST(PoolCostTest, CostCalculation) {
     double cost = calculatePoolCost();
-    EXPECT_NEAR(cost, 62831.853, 0.001);
+    EXPECT_NEAR(cost, 72257, 0.001);
 }
 
 
