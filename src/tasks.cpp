@@ -1,21 +1,22 @@
+// Copyright 2025 UNN-CS Team
+#include <cmath>
 #include "tasks.h"
 #include "circle.h"
-#include <cmath>
 
 double calculateEarthRopeGap() {
-    double earthRadius = 6378100; // Радиус Земли в метрах
+    double earthRadius = 6378100; 
     Circle earth(earthRadius);
-    double ropeLength = earth.getFerence() + 1; // Добавляем 1 метр к длине верёвки
+    double ropeLength = earth.getFerence() + 1; 
     Circle newCircle(0);
     newCircle.setFerence(ropeLength);
     return newCircle.getRadius() - earthRadius;
 }
 
 double calculatePoolCost() {
-    double poolRadius = 3; // Радиус бассейна в метрах
-    double pathWidth = 1; // Ширина дорожки в метрах
-    double concreteCostPerSquareMeter = 1000; // Стоимость бетона за квадратный метр
-    double fenceCostPerMeter = 2000; // Стоимость ограды за погонный метр
+    double poolRadius = 3; 
+    double pathWidth = 1; 
+    double concreteCostPerSquareMeter = 1000; 
+    double fenceCostPerMeter = 2000; 
 
     Circle pool(poolRadius);
     Circle poolWithPath(poolRadius + pathWidth);

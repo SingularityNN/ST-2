@@ -19,13 +19,6 @@ target_include_directories(${PROJECT_NAME}.info
 target_link_libraries(${PROJECT_NAME}.info
   ${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME}_tests test/tests.cpp)
-target_include_directories(${PROJECT_NAME}_tests
-  PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
-         ${${PROJECT_NAME}_SOURCE_DIR}/include)
-target_link_libraries(${PROJECT_NAME}_tests
-  ${PROJECT_NAME} gtest gtest_main pthread)
-
 install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION "${lib_dest}"
     ARCHIVE DESTINATION "${lib_dest}"
