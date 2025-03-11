@@ -8,23 +8,23 @@
 #endif
 
 Circle::Circle(double r) {
-    setRadius(r);
+    setRadius(abs(r));
 }
 
 void Circle::setRadius(double r) {
-    radius = r;
+    radius = abs(r);
     updateFerence();
     updateArea();
 }
 
 void Circle::setFerence(double f) {
-    ference = f;
+    ference = abs(f);
     radius = f / (2 * M_PI);
     updateArea();
 }
 
 void Circle::setArea(double a) {
-    area = a;
+    area = abs(a);
     radius = sqrt(a / M_PI);
     updateFerence();
 }

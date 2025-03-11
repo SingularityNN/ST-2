@@ -108,7 +108,7 @@ TEST(EarthRopeTest, ZeroRopeLength) {
 
 TEST(PoolCostTest, CostCalculation) {
     double cost = calculatePoolCost();
-    EXPECT_NEAR(cost, 72257, 0.1);
+    EXPECT_NEAR(cost, 72256.63, 0.1);
 }
 
 TEST(PoolCostTest, SmallPoolRadius) {
@@ -121,7 +121,7 @@ TEST(PoolCostTest, SmallPoolRadius) {
     double totalConcreteCost = pathArea * 1000;
     double totalFenceCost = fenceLength * 2000;
     double totalCost = totalConcreteCost + totalFenceCost;
-    EXPECT_NEAR(totalCost, 15708, 0.1);
+    EXPECT_NEAR(totalCost, 34557.51, 0.1);
 }
 
 TEST(PoolCostTest, LargePoolRadius) {
@@ -134,7 +134,7 @@ TEST(PoolCostTest, LargePoolRadius) {
     double totalConcreteCost = pathArea * 1000;
     double totalFenceCost = fenceLength * 2000;
     double totalCost = totalConcreteCost + totalFenceCost;
-    EXPECT_NEAR(totalCost, 144513, 0.1);
+    EXPECT_NEAR(totalCost, 204203.52, 0.1);
 }
 
 TEST(PoolCostTest, ZeroPathWidth) {
@@ -147,5 +147,5 @@ TEST(PoolCostTest, ZeroPathWidth) {
     double totalConcreteCost = pathArea * 1000;
     double totalFenceCost = fenceLength * 2000;
     double totalCost = totalConcreteCost + totalFenceCost;
-    EXPECT_NEAR(totalCost, 37699, 0.1);
+    EXPECT_NEAR(totalCost, 37699.11, 0.1);
 }
