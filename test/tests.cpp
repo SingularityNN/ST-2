@@ -149,3 +149,26 @@ TEST(PoolCostTest, ZeroPathWidth) {
     double totalCost = totalConcreteCost + totalFenceCost;
     EXPECT_NEAR(totalCost, 37699.11, 0.1);
 }
+
+TEST(CircleTest, CombinedSetMethods) {
+    Circle c(0);
+    c.setRadius(2);
+    c.setFerence(2 * M_PI * 3);
+    EXPECT_NEAR(c.getRadius(), 3, 0.1);
+    EXPECT_NEAR(c.getArea(), M_PI * 9, 0.1);
+}
+
+TEST(PoolCostTest, NegativeConcretePrice) {
+    double poolRadius = 3;
+    double pathWidth = 1;
+    Circle pool(poolRadius);
+    Circle poolWithPath(poolRadius + pathWidth);
+    double pathArea = poolWithPath.getArea() - pool.getArea();
+    double fenceLength = poolWithPath.getFerence();
+    
+    double totalConcreteCost = pathArea * -500;
+    double totalFenceCost = fenceLength * 2000;
+    double totalCost = totalConcreteCost + totalFenceCost;
+    
+    EXPECT_NEAR(totalCost, 62831.853 - 10995.5, 0.1);
+}
